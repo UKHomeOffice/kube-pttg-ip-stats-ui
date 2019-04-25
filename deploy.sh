@@ -19,10 +19,10 @@ else
         export KUBE_TOKEN=${PTTG_IP_DEV}
     fi
 fi
-#
+
 if [[ -z ${KUBE_TOKEN} ]] ; then
     echo "Failed to find a value for KUBE_TOKEN - exiting"
-    exit -1
+    exit 1
 fi
 
 cd kd
