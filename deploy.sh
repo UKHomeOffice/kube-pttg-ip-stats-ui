@@ -25,6 +25,18 @@ if [[ -z ${KUBE_TOKEN} ]] ; then
     exit 1
 fi
 
+if [ "${ENVIRONMENT}" == "pr" ] ; then
+    export DNS_PREFIX=
+    export KC_REALM=pttg-production
+else
+    export DNS_PREFIX=${ENVIRONMENT}.notprod.
+    export KC_REALM=pttg-qa
+fi
+
+export DOMAIN_NAME=ip.${DNS_PREFIX}pttg.homeoffice.gov.uk
+
+echo "DOMAIN_NAME is $DOMAIN_NAME"
+
 cd kd
 
 kd --insecure-skip-tls-verify \
