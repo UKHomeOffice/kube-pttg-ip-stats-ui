@@ -33,7 +33,7 @@ else
     export KC_REALM=pttg-qa
 fi
 
-export DOMAIN_NAME=ip.${DNS_PREFIX}pttg.homeoffice.gov.uk
+export DOMAIN_NAME=ipstats.${DNS_PREFIX}pttg.homeoffice.gov.uk
 
 echo "DOMAIN_NAME is $DOMAIN_NAME"
 
