@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: pttg-ip-stats-ui
+  name: pttg-ip-stats-ui
+spec:
+  ports:
+  - name: https
+    port: 443
+    targetPort: 10443
+  selector:
+    name: pttg-ip-stats-ui
