@@ -140,7 +140,7 @@ spec:
                 name: pttg-ip-api-service-secrets
                 key: pttg_ip_stats_ui
           - name: SERVER_PORT
-            value: 8000
+            value: '8000'
         resources:
           limits:
             cpu: 1000m
