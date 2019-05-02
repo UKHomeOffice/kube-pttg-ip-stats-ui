@@ -99,7 +99,7 @@ spec:
           memory: "50Mi"
           cpu: 100m
         args:
-          - --config=/etc/secrets/keycloak-api-secret.yaml
+          - --config=/etc/secrets/keycloak-api-stats-secret.yaml
           - --discovery-url=https://sso.digital.homeoffice.gov.uk/auth/realms/{{.KC_REALM}}
           - --client-id=pttg-ip-stats-{{.ENVIRONMENT}}
           - --listen=127.0.0.1:9000
@@ -119,7 +119,7 @@ spec:
           - name: keycloak-http
             containerPort: 9000
         volumeMounts:
-          - name: keycloak-api-secret
+          - name: keycloak-stats-secret
             mountPath: /etc/secrets
             readOnly: true
       - name: pttg-ip-stats-ui
@@ -179,9 +179,9 @@ spec:
         - name: certs
           emptyDir:
             medium: "Memory"
-        - name: keycloak-api-secret
+        - name: keycloak-api-stats-secret
           secret:
-            secretName: keycloak-api-secret
+            secretName: keycloak-api-stats-secret
         - name: bundle
           configMap:
             name: bundle
