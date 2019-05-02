@@ -141,6 +141,8 @@ spec:
                 key: pttg_ip_stats_ui
           - name: SERVER_PORT
             value: '8000'
+          - name: CA_CERTS_PATH
+            value: "/certs/tls.pem"
         resources:
           limits:
             cpu: 1000m
