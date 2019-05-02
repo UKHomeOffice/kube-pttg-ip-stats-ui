@@ -134,17 +134,6 @@ spec:
         env:
           - name: API_ROOT
             value: "https://pttg-ip-api.pttg-ip-{{.ENVIRONMENT}}.svc.cluster.local"
-          - name: CA_CERTS_PATH
-            value: "/certs/tls.pem"
-          - name: PROXY_REDIRECTION_URL
-            value: https://{{.DOMAIN_NAME}}
-          - name: FEEDBACK_ROOT
-            value: "https://pttg-feedback.pttg-ip-{{.ENVIRONMENT}}.svc.cluster.local"
-          - name: PROXY_DISCOVERY_URL
-            valueFrom:
-              configMapKeyRef:
-                name: endpoint-config
-                key: PROXY_DISCOVERY_URL
           - name: IP_API_AUTH
             valueFrom:
               secretKeyRef:
