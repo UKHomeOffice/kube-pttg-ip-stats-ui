@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+tmp
+kubectl
+kd_linux_amd64
+.tags*
+*.iml
