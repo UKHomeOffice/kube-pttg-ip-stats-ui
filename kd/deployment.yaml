@@ -3,6 +3,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: pttg-ip-stats-ui
+  annotations:
+    downscaler/uptime: {{.UPTIME_SCHEDULE}}
   labels:
     version: {{.VERSION}}
 spec:
