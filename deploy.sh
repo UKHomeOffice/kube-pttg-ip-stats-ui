@@ -24,7 +24,7 @@ export DOMAIN_NAME=ipstats.${DNS_PREFIX}pttg.homeoffice.gov.uk
 
 echo "DOMAIN_NAME is $DOMAIN_NAME"
 
-cd kd || exit
+cd kd || exit 1
 
 kd --insecure-skip-tls-verify \
     -f networkPolicy.yaml \
