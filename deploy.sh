@@ -26,6 +26,7 @@ export DOMAIN_NAME=ipstats.${DNS_PREFIX}pttg.homeoffice.gov.uk
 
 echo "DOMAIN_NAME is $DOMAIN_NAME"
 
+
 export KUBE_CERTIFICATE_AUTHORITY=/tmp/cert.crt
 if ! curl --silent --fail --retry 5 \
     https://raw.githubusercontent.com/UKHomeOffice/acp-ca/master/$CLUSTER_NAME.crt -o $KUBE_CERTIFICATE_AUTHORITY; then
