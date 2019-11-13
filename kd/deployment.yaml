@@ -86,11 +86,12 @@ spec:
         ports:
           - name: https
             containerPort: 10443
-      - name: keycloak-proxy
-        image: quay.io/ukhomeofficedigital/go-keycloak-proxy:v2.1.1
+      - name: keycloak-gatekeeper
+        image: quay.io/keycloak/keycloak-gatekeeper:7.0.1
         imagePullPolicy: Always
         securityContext:
           runAsNonRoot: true
+          runAsUser: 1000
         resources:
          limits:
           memory: "100Mi"
