@@ -8,6 +8,9 @@ if [[ -z ${VERSION} ]] ; then
     export VERSION=${IMAGE_VERSION}
 fi
 
+# TODO EE-28636 Remove this - testing numeric version numbers
+VERSION=1.2
+
 echo "deploy ${VERSION} to ${ENVIRONMENT} namespace - using Kube token stored as drone secret"
 
 if [[ ${ENVIRONMENT} == "pr" ]] ; then
