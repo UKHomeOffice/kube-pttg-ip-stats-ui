@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: pttg-ip-stats-ui
   labels:
-    version: "{{.VERSION | quote}}"
+    version: "{{.VERSION}}"
 spec:
   replicas: 2
   selector:
@@ -19,7 +19,7 @@ spec:
     metadata:
       labels:
         name: pttg-ip-stats-ui
-        version: {{.VERSION | quote}}
+        version: {{.VERSION}}
     spec:
       containers:
       - name: certs
@@ -126,7 +126,7 @@ spec:
             mountPath: /etc/secrets
             readOnly: true
       - name: pttg-ip-stats-ui
-        image: quay.io/ukhomeofficedigital/pttg-ip-stats-ui:{{.VERSION | quote}}
+        image: quay.io/ukhomeofficedigital/pttg-ip-stats-ui:{{.VERSION}}
         imagePullPolicy: Always
         securityContext:
           runAsNonRoot: true
