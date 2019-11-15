@@ -35,4 +35,4 @@ kd \
     -f networkPolicy.yaml \
     -f ingress.yaml \
     -f deployment.yaml \
-    -f service.yaml
+    -f service.yaml --debug
