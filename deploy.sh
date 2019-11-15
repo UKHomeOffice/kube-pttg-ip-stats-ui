@@ -9,7 +9,7 @@ if [[ -z ${VERSION} ]] ; then
 fi
 
 # TODO EE-28636 Remove this - testing numeric version numbers
-VERSION=bad_version
+VERSION=1.3.0
 
 echo "deploy ${VERSION} to ${ENVIRONMENT} namespace - using Kube token stored as drone secret"
 
